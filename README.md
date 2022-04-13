@@ -1,4 +1,4 @@
-### Script for Checking WiFi Connectivity
+## Script for Checking WiFi Connectivity
 
 This script is built to check whether devices are connected to a WiFi or not. Depending on the connectivity state, appropriate Device Tags will be added.
 
@@ -27,7 +27,9 @@ The way this is achieved is by doing the following steps:
       - If the error message contains "No Internet", add relevant tag to device
   - If device is in any other state - Write a .txt file in root project folder
 
-How to set up environment for the first time. Open a Terminal window in the project root folder, and type in the following commands:
+### How to set up environment
+
+Open a Terminal window in the project root folder, and type in the following commands:
 
 ```commandline
 python3 -m pip install --user virtualenv

@@ -19,8 +19,8 @@ def remove_device_tag_from_all_online_devices():
 def get_device_list():
 
     headers = {
-        'Authorization': 'Bearer %s' % access_key,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer %s' % access_key
     }
 
     response = requests.request('GET',
@@ -29,26 +29,38 @@ def get_device_list():
                                 verify=False,
                                 timeout=60)
 
-    device_id = get_json_values_from_response_content('id', response.content)
-    device_status = get_json_values_from_response_content('displayStatus', response.content)
-    device_name = get_json_values_from_response_content('deviceName', response.content)
-    device_udid = get_json_values_from_response_content('udid', response.content)
-
     combined_list = []
 
-    for i in range(len(device_status)):
-        combined_list.append(str(device_id[i]) + ' | ' + device_status[i] + ' | ' + device_name[i] + ' | ' + device_udid[i])
+    if response.status_code == 200:
+        logger(
+            'Python Script (function: get_device_list) - Successfully retrieved device list from SeeTest Cloud, '
+            'response output: %s' % response.text)
+
+        device_id = get_json_values_from_response_content('id', response.content)
+        device_status = get_json_values_from_response_content('displayStatus', response.content)
+        device_name = get_json_values_from_response_content('deviceName', response.content)
+        device_udid = get_json_values_from_response_content('udid', response.content)
+
+        for i in range(len(device_status)):
+            combined_list.append(
+                str(device_id[i]) + ' | ' + device_status[i] + ' | ' + device_name[i] + ' | ' + device_udid[i])
+
+    else:
+        logger(
+            'Python Script (function: get_device_list) - Unable to retrieve device list from SeeTest Cloud, '
+            'response output: %s' % response.text)
 
     return combined_list
 
 
 def run_http_request(device_id, url_to_hit):
 
+    # Remove Device Tag to begin with as we don't know the state of the device.
     remove_all_device_tags(device_id)
 
     headers = {
-        'Authorization': 'Bearer %s' % access_key,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer %s' % access_key
     }
 
     payload = json.dumps(
@@ -67,6 +79,7 @@ def run_http_request(device_id, url_to_hit):
     response_list = []
 
     try:
+        # Retrieve the URL and Status Code as part of the API request
         url = get_singular_json_value_from_response_content('url', response.content)
         status_code = get_singular_json_value_from_response_content('statusCode', response.content)
 
@@ -106,7 +119,7 @@ def run_http_request(device_id, url_to_hit):
                 # and might need to ge re-connected / rebooted
                 if 'paltielX' in message:
                     remove_all_device_tags(device_id)
-                    add_device_tag(device_id, "PaltielX_Not_Alive")
+                    add_device_tag(device_id, "Cyder_Not_Alive")
                 # Socket Timeout means device cannot be opened, reboot / re-connect device
                 elif 'SocketTimeoutException' in message:
                     remove_all_device_tags(device_id)
@@ -124,8 +137,8 @@ def run_http_request(device_id, url_to_hit):
 def remove_all_device_tags(device_id):
 
     headers = {
-        'Authorization': 'Bearer %s' % access_key,
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer %s' % access_key
     }
 
     response = requests.request('DELETE',
