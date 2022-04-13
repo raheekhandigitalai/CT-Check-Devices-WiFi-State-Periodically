@@ -2,7 +2,7 @@
 
 This script is built to check whether devices are connected to a WiFi or not. Depending on the connectivity state, appropriate Device Tags will be added.
 
-Prerequisites:
+### Prerequisites
 
 **config.properties** needs to be updated to provide the following information:
 
@@ -14,18 +14,20 @@ access_key=<insert access key>
 cloud_url=https://uscloud.experitest.com # replace with your Cloud URL
 ```
 
-The way this is achieved is by doing the following steps:
+### Flow
+
+This is the flow of the script and what it does when triggered:
 
 - Get list of all devices from a SeeTest Cloud
 - Get state of devices
-  - If device is offline - Write a .txt file in root project folder
-  - If device is in use - Write a .txt file in root project folder
-  - If device is in error - Write a .txt file in root project folder
-  - If device is online - Run HTTP Request to ping against a website and write a .txt file in root project folder
+  - If device is offline - Write it into a .txt file in root project folder
+  - If device is in use - Write it into a .txt file in root project folder
+  - If device is in error - Write it into a .txt file in root project folder
+  - If device is online - Run HTTP Request to ping against a website and write it into a .txt file in root project folder
     - If Ping is successful, all good
     - if Ping is not successful, parse the error message
       - If the error message contains "No Internet", add relevant tag to device
-  - If device is in any other state - Write a .txt file in root project folder
+  - If device is in any other state - Write it into a .txt file in root project folder
 
 ### How to set up environment
 
