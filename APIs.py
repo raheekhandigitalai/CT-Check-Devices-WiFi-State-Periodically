@@ -104,9 +104,9 @@ def run_http_request(device_id, url_to_hit):
                 elif 'NSURLErrorDomain' in error:
                     remove_all_device_tags(device_id)
                     add_device_tag(device_id, "No_Internet")
-                elif 'SocketTimeoutException' in error:
-                    remove_all_device_tags(device_id)
-                    add_device_tag(device_id, "Socket_Timeout")
+                # elif 'SocketTimeoutException' in error:
+                #     remove_all_device_tags(device_id)
+                #     add_device_tag(device_id, "Socket_Timeout")
 
                 response_list = ['Error Message: ' + error]
             # If the device is not in SUCCESS state, it means the device is in ERROR, in such case, capture
@@ -117,13 +117,13 @@ def run_http_request(device_id, url_to_hit):
 
                 # If Cyder is not in a working state, it means the device is problematic
                 # and might need to ge re-connected / rebooted
-                if 'paltielX' in message:
-                    remove_all_device_tags(device_id)
-                    add_device_tag(device_id, "Cyder_Not_Alive")
+                # if 'paltielX' in message:
+                #     remove_all_device_tags(device_id)
+                #     add_device_tag(device_id, "Cyder_Not_Alive")
                 # Socket Timeout means device cannot be opened, reboot / re-connect device
-                elif 'SocketTimeoutException' in message:
-                    remove_all_device_tags(device_id)
-                    add_device_tag(device_id, "Socket_Timeout")
+                # elif 'SocketTimeoutException' in message:
+                #     remove_all_device_tags(device_id)
+                #     add_device_tag(device_id, "Socket_Timeout")
 
                 response_list = ['Status: ' + status, 'Message: ' + message, 'Code: ' + code]
         else:
