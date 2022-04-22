@@ -1,5 +1,6 @@
 import configparser
 from datetime import datetime
+import os
 
 config = configparser.ConfigParser()
 config.read('config.properties')
@@ -11,8 +12,14 @@ def get_current_date_and_time():
     return dt_string
 
 
-def write_to_file(file_name, items):
-    with open(file_name + '-' + get_current_date_and_time() + '.txt', 'w') as f:
+def create_folder():
+    folder_name = 'devices_state_' + get_current_date_and_time()
+    os.mkdir(folder_name)
+    return folder_name
+
+
+def write_to_file(folder_name, file_name, items):
+    with open(folder_name + '/' + file_name + '-' + get_current_date_and_time() + '.txt', 'w') as f:
         for item in items:
             f.write("%s\n" % item)
 

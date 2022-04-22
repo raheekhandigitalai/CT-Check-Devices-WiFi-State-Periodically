@@ -1,0 +1,96 @@
+188763  |  Available  |  iPhone6 B0059  |  89f1985e678311073076680ec6ebb55f23c9680e
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+34  |  Available  |  OnePlus 5 A5000 A0206  |  ad025e96
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+40  |  Available  |  LGE Nexus 5X A0208  |  0252828773b5b1d1
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+834928  |  Available  |  samsung S8 A0257 CloudOPS OTP - DO NOT TOUCH  |  ce011821781268020c
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+1567253  |  Available  |  IPad Pro (9.7-Inch) B0110  |  9bab91bbb952bac0372ecbd5c8ce53ae2eefe27a
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+189796  |  Available  |  iPhone SE B0178  |  0384f534f174379cdd64d30132680936aa068f21
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+1567305  |  Available  |  iPad (5th Generation) B0188  |  bb2e1ef66d6f882fb72bc3fb702ba543a73f96a9
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+216043  |  Available  |  iPad Air 2 B0091  |  d91b89324f2de44c5e86e5cac6a1b07dd685a49b
+['Error Message: Got URL Exception with domain: NSURLErrorDomain, description: The Internet connection appears to be offline., and code: -1009']
+================================================
+191270  |  Available  |  iPad air 2 b0108  |  5d22bbe0e5529ccbf60b3626ed42ee636bc5f836
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+122406  |  Available  |  iPad Air 2 B0169  |  d6dd2ddf57798dfd6d4329b6793a7e134fefa6cd
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+191266  |  Available  |  LGE LG-K420  a0151  |  LGK4207006d060
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+470925  |  Available  |  Xiaomi Redmi 3S A0130  |  f229f2207d53
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+188049  |  Available  |  LGE LG-H850 a0097  |  LGH85056416a94
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+896940  |  Available  |  iPhone 7 Plus B0174  |  8a6ebde6cd60885b60a054c94abb12f682e0765a
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+496721  |  Available  |  Soti test - DO NOT TOUCH (IO-IL 111)  |  5200966eee3555ab
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+63  |  Available  |  iPhone SE B0180  |  da396575c118503aada6b45c6f8f1652d14d9722
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+1567281  |  Available  |  iPhone7plus #B0112  |  792710d6b6d257f45f02835f6d1d3374656d5579
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+1567291  |  Available  |  IPad Pro (9.7-Inch) B0194  |  408752d30e6462448b979b7e63c474270a8a35f9
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+1567271  |  Available  |  iPhone 5s B0040  |  d8b8474d72897e5dff1ad04c3c4c05a04b5a43b1
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+203399  |  Available  |  iPad mini 4 b0081  |  13f08da882272c12f38b6daa369b8a1b5d6f5dbf
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+189841  |  Available  |  samsungS7 edge A0180  |  ce10160ab1e1ce2201
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+189848  |  Available  |  iPhone 7 plus b0172  |  ec5886be6fdc03aa1c987afc35d5e17203470457
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+179880  |  Available  |  Zebra Technologies TC56 D0063  |  18105522500579
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+203411  |  Available  |  samsung galaxy S6 a0018  |  0715f765a15e013a
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+214877  |  Available  |  Samsung S5 A0089  |  08bfb167
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+189776  |  Available  |  Xiaomi Redmi 6 a0275  |  1cf4685f7d24
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+188101  |  Available  |  iPad Air 2 b0158  |  6748229077675a3804b91edf99324001c6dde148
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+195079  |  Available  |  iPad mini 4 b0044  |  10716acaded1c16fc20ddc20cb805d149ecbb5c9
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+56  |  Available  |  Samsung S6 A0225  |  02157df21be36232
+['URL: https://www.chase.com', 'Status Code: 200']
+================================================
+187679  |  Available  |  iPhone 6 B0035  |  569801f701a84ceedc3d0458297cea7dc353680a
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+187687  |  Available  |  iPhone 7 B0115  |  05c85d8a5dc12bdafa0479b1d7a77d17ff06b568
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================
+183112  |  Available  |  iPhone 6 Plus B0116  |  bea833242abf5311cd1715fc515b0f96250ab8c2
+['URL: https://www.chase.com/', 'Status Code: 200']
+================================================

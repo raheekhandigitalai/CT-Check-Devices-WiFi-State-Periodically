@@ -1,7 +1,11 @@
+import os.path
+
+import helpers
 from APIs import get_device_list
 from APIs import run_http_request
 
 from helpers import write_to_file
+from helpers import create_folder
 from helpers import logger
 
 
@@ -52,23 +56,21 @@ def check_if_device_is_connected_to_the_internet():
             logger('Not Sure: ' + device_properties)
             rows_not_sure.append(device_properties)
 
-    write_to_file('offline_devices', rows_offline)
-    write_to_file('online_devices', rows_online)
-    write_to_file('in_use_devices', rows_in_use)
-    write_to_file('error_devices', rows_error)
-    write_to_file('unauthorized_devices', rows_unauthorized)
-    write_to_file('not_sure', rows_not_sure)
+    folder_path = create_folder()
+    write_to_file(folder_path, 'offline_devices', rows_offline)
+    write_to_file(folder_path, 'online_devices', rows_online)
+    write_to_file(folder_path, 'in_use_devices', rows_in_use)
+    write_to_file(folder_path, 'error_devices', rows_error)
+    write_to_file(folder_path, 'unauthorized_devices', rows_unauthorized)
+    write_to_file(folder_path, 'not_sure', rows_not_sure)
 
 
 if __name__ == '__main__':
     check_if_device_is_connected_to_the_internet()
-    # now = datetime.now()
-    # print(date.today())
-    # dt_string = now.strftime("%m_%d_%Y-%H_%M_%S")
-    # print(dt_string)
-    # print(APIs.add_device_tag('2025017', 'rahee_test_1'))
-    # print(APIs.add_device_tag('2025017', 'rahee_test_2'))
-    # print(APIs.add_device_tag('2025017', 'rahee_test_3'))
     # print(APIs.get_device_tags('2025017'))
     # print(run_http_request('2025017', 'https://www.chase.com'))
+    # folder_name = 'devices_state_' + helpers.get_current_date_and_time()
+    # os.mkdir(folder_name)
+    # folder_path = helpers.create_folder()
+    # helpers.write_to_file(folder_path, 'test', [1, 2, 3])
 

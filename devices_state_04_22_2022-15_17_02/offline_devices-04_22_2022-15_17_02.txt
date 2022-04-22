@@ -1,0 +1,4 @@
+1274828  |  Offline  |  HTC HTC One M9 - defect  |  FA676YJ00579
+203407  |  Offline  |  iPhone 8 b0149  |  9188616246e0bb9261a9bbbd819aecf52a6b6ee6
+189834  |  Offline  |  Samsung Galaxy s7 a0178 Sent_For_Repair  |  ad061703c8d3d9298d
+187724  |  Offline  |  LGE Nexus 5 a0048  |  0b2b55230bfd30c6
