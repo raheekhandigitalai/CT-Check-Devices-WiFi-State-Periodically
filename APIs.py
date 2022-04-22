@@ -12,10 +12,6 @@ access_key = helpers.get_access_key()
 cloud_url_and_end_point = helpers.get_cloud_url_and_devices_end_point()
 
 
-def remove_device_tag_from_all_online_devices():
-    return 0
-
-
 def get_device_list():
 
     headers = {
@@ -55,8 +51,13 @@ def get_device_list():
 
 def run_http_request(device_id, url_to_hit):
 
-    # Remove Device Tag to begin with as we don't know the state of the device.
-    remove_all_device_tags(device_id)
+    # Get a list of current tags from device
+    current_tags = get_device_tags(device_id)
+
+    # Checks if device has any existing tags. If tags exists, remove all tags, else skip the step
+    if len(current_tags) > 1:
+        # Remove Device Tag to begin with as we don't know the state of the device.
+        remove_all_device_tags(device_id)
 
     headers = {
         'Content-Type': 'application/json',
@@ -132,6 +133,28 @@ def run_http_request(device_id, url_to_hit):
         print('not sure')
 
     return response_list
+
+
+def get_device_tags(device_id):
+
+    headers = {
+        'Authorization': 'Bearer %s' % access_key
+    }
+
+    response = requests.request('GET',
+                                cloud_url_and_end_point + '/%s/tags' % device_id,
+                                headers=headers,
+                                verify=False)
+
+    if response.status_code == 200:
+        logger(
+            'Python Script (function: get_device_tags) - Successfully retrieved all tags from device, '
+            'response output: %s' % response.text)
+        return get_data(response.content)
+    else:
+        logger(
+            'Python Script (function: get_device_tags) - Unable to retrieve tags from device, '
+            'response output: %s' % response.text)
 
 
 def remove_all_device_tags(device_id):
@@ -215,3 +238,9 @@ def get_singular_json_value_from_response_content_from_error(value, response_con
         print(e)
     return return_value
 
+
+# Simply returns data content
+def get_data(response_content):
+    data = json.loads(response_content)
+    tags = data['data']
+    return tags

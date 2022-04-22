@@ -20,9 +20,7 @@ This is the flow of the script and what it does when triggered:
 
 - Get list of all devices from a SeeTest Cloud
 - Get state of devices
-  - If device is offline - Write it into a .txt file in root project folder
-  - If device is in use - Write it into a .txt file in root project folder
-  - If device is in error - Write it into a .txt file in root project folder
+  - If device is in offline / in use / error / unauthorized - Write it into a .txt file separately for each state in the root project folder
   - If device is online - Run HTTP Request to ping against a website and write it into a .txt file in root project folder
     - If Ping is successful, all good
     - if Ping is not successful, parse the error message

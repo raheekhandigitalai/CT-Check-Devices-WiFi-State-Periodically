@@ -1,3 +1,4 @@
+import APIs
 from APIs import get_device_list
 from APIs import run_http_request
 
@@ -37,6 +38,8 @@ def check_if_device_is_connected_to_the_internet():
         elif 'In Use' in device_info[i]:
             logger('Device In Use: ' + device_properties)
             rows_in_use.append(device_properties)
+            # rows_online.append(run_http_request(device_property[0], 'https://www.chase.com'))
+            # rows_online.append("================================================")
         # Check if device is in Error
         elif 'Error' in device_info[i]:
             logger('Device Error: ' + device_properties)
@@ -54,9 +57,15 @@ def check_if_device_is_connected_to_the_internet():
     write_to_file('online_devices.txt', rows_online)
     write_to_file('in_use_devices.txt', rows_in_use)
     write_to_file('error_devices.txt', rows_error)
+    write_to_file('unauthorized_devices.txt', rows_unauthorized)
     write_to_file('not_sure.txt', rows_not_sure)
 
 
 if __name__ == '__main__':
     check_if_device_is_connected_to_the_internet()
+    # print(APIs.add_device_tag('2025017', 'rahee_test_1'))
+    # print(APIs.add_device_tag('2025017', 'rahee_test_2'))
+    # print(APIs.add_device_tag('2025017', 'rahee_test_3'))
+    # print(APIs.get_device_tags('2025017'))
+    # print(run_http_request('2025017', 'https://www.chase.com'))
 
