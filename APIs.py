@@ -55,7 +55,7 @@ def run_http_request(device_id, url_to_hit):
     current_tags = get_device_tags(device_id)
 
     # Checks if device has any existing tags. If tags exists, remove all tags, else skip the step
-    if len(current_tags) > 1:
+    if len(current_tags) > 0:
         # Remove Device Tag to begin with as we don't know the state of the device.
         remove_all_device_tags(device_id)
 

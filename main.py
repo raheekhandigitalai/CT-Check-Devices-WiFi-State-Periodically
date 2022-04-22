@@ -1,4 +1,3 @@
-import APIs
 from APIs import get_device_list
 from APIs import run_http_request
 
@@ -53,16 +52,20 @@ def check_if_device_is_connected_to_the_internet():
             logger('Not Sure: ' + device_properties)
             rows_not_sure.append(device_properties)
 
-    write_to_file('offline_devices.txt', rows_offline)
-    write_to_file('online_devices.txt', rows_online)
-    write_to_file('in_use_devices.txt', rows_in_use)
-    write_to_file('error_devices.txt', rows_error)
-    write_to_file('unauthorized_devices.txt', rows_unauthorized)
-    write_to_file('not_sure.txt', rows_not_sure)
+    write_to_file('offline_devices', rows_offline)
+    write_to_file('online_devices', rows_online)
+    write_to_file('in_use_devices', rows_in_use)
+    write_to_file('error_devices', rows_error)
+    write_to_file('unauthorized_devices', rows_unauthorized)
+    write_to_file('not_sure', rows_not_sure)
 
 
 if __name__ == '__main__':
     check_if_device_is_connected_to_the_internet()
+    # now = datetime.now()
+    # print(date.today())
+    # dt_string = now.strftime("%m_%d_%Y-%H_%M_%S")
+    # print(dt_string)
     # print(APIs.add_device_tag('2025017', 'rahee_test_1'))
     # print(APIs.add_device_tag('2025017', 'rahee_test_2'))
     # print(APIs.add_device_tag('2025017', 'rahee_test_3'))
