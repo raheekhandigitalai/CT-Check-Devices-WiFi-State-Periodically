@@ -34,3 +34,7 @@ def get_access_key():
 
 def get_cloud_url_and_devices_end_point():
     return config.get('seetest_urls', 'cloud_url') + config.get('seetest_urls', 'end_point')
+
+
+def url_to_hit_for_connectivity_status():
+    return config.get('url_to_hit_for_connectivity_status', 'url_to_hit')

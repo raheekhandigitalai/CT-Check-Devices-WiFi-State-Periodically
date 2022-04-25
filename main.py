@@ -24,6 +24,7 @@ def check_if_device_is_connected_to_the_internet():
     # Check for each device retrieved
     for i in range(len(device_info)):
         device_property = device_info[i].split('|')
+
         # Separating out the details: device_id, device_status, device_name, device_udid
         device_properties = device_property[0] + ' | ' + device_property[1] + ' | ' + device_property[2] + ' | ' + device_property[3]
 
@@ -35,13 +36,13 @@ def check_if_device_is_connected_to_the_internet():
         elif 'Available' in device_info[i]:
             logger('Device Online: ' + device_properties)
             rows_online.append(device_properties)
-            rows_online.append(run_http_request(device_property[0], 'https://www.chase.com'))
+            rows_online.append(run_http_request(device_property[0]))
             rows_online.append("================================================")
         # Check if device is In Use
         elif 'In Use' in device_info[i]:
             logger('Device In Use: ' + device_properties)
             rows_in_use.append(device_properties)
-            # rows_online.append(run_http_request(device_property[0], 'https://www.chase.com'))
+            # rows_online.append(run_http_request(device_property[0]))
             # rows_online.append("================================================")
         # Check if device is in Error
         elif 'Error' in device_info[i]:
@@ -67,10 +68,4 @@ def check_if_device_is_connected_to_the_internet():
 
 if __name__ == '__main__':
     check_if_device_is_connected_to_the_internet()
-    # print(APIs.get_device_tags('2025017'))
-    # print(run_http_request('2025017', 'https://www.chase.com'))
-    # folder_name = 'devices_state_' + helpers.get_current_date_and_time()
-    # os.mkdir(folder_name)
-    # folder_path = helpers.create_folder()
-    # helpers.write_to_file(folder_path, 'test', [1, 2, 3])
 

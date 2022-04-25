@@ -10,6 +10,7 @@ config.read('config.properties')
 
 access_key = helpers.get_access_key()
 cloud_url_and_end_point = helpers.get_cloud_url_and_devices_end_point()
+url_to_hit = helpers.url_to_hit_for_connectivity_status()
 
 
 def get_device_list():
@@ -49,7 +50,7 @@ def get_device_list():
     return combined_list
 
 
-def run_http_request(device_id, url_to_hit):
+def run_http_request(device_id):
 
     # Get a list of current tags from device
     current_tags = get_device_tags(device_id)
